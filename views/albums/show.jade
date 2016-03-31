@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1 Show Album: #{theAlbum.name}
+
+  p= theAlbum.genre
+  p= theAlbum.artist
+  p= theAlbum.stars
+  if (theAlbum.explicit)
+    p Explicit Lyrics
+  else
+    p Not Explicit Lyrics
+
+  div(style="margin-bottom: 10px")
+  a(href="/albums/" + theAlbum.id + '/edit') Edit
+  div(style="margin-bottom: 10px")
+  form(action="/albums/" + theAlbum.id + "/delete?_method=DELETE", method="post" style="margin-bottom: 50px")
+    input(type="submit" value="Delete Album")
+  div
+    a(href="/albums") Albums Home

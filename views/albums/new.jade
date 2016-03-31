@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+
+  form(action="/albums", method="post")
+    fieldset
+      legend Create Album
+      div
+        p Artist
+        input(type="text" name="artist_name")
+        p Album
+        input(type="text" name="album_name")
+        p Genre
+        select(name="genre")
+          option(value="Jazz") Jazz
+          option(value="Rock") Rock
+          option(value="Rap") Rap
+          option(value="Country") Country
+        p Stars
+        label 1
+        input(type="radio" name="stars" value="1")
+        input(type="radio" name="stars" value="2")
+        input(type="radio" name="stars" value="3")
+        input(type="radio" name="stars" value="4")
+        input(type="radio" name="stars" value="5")
+        label 5
+        p
+        input(type="checkbox" name="explicit_lyrics")
+        label Contains Explicit Lyrics
+        p
+      div
+        input(type="submit" value="Create Album" style="margin-right: 10px")
+        a(href="/albums") cancel

@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 Albums
+
+  a(href="/albums/new") New Album
+  table(class= 'album-table')
+    tr
+      td Genre
+      td Artist
+      td Album
+    for album in albums
+      tr
+        td= album.genre
+        td= album.artist
+        td
+          a(href='/albums/' + album.id)= album.name
