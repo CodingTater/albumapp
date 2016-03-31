@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.put('/:id/update', function(req, res, next) {
-  Albums().where({id: req.params.id}).update({ artist: req.body.artist_name, name: req.body.album_name, genre: req.body.genre, stars: Number.parseInt(req.body.stars), explicit: req.body.explicit_lyrics || false }).then(function () {
+  Albums().where({id: req.params.id}).update({ artist: req.body.artist_name, name: req.body.album_name, genre: req.body.genre, stars: Number.parseInt(req.body.stars), explicit: req.body.explicit_lyrics || false }).then(function() {
     res.redirect('/albums/' + req.params.id);
   });
 });
